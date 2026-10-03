@@ -1,0 +1,61 @@
+{
+  "total": 11,
+  "passed": 11,
+  "cases": [
+    {
+      "case": "E1 空文件夹不崩溃且退出码=1",
+      "pass": true,
+      "detail": "rc=1"
+    },
+    {
+      "case": "E2 路径不存在返回退出码=2",
+      "pass": true,
+      "detail": "rc=2"
+    },
+    {
+      "case": "E3 规则库损坏时优雅报错（rc=2）",
+      "pass": true,
+      "detail": "rc=2"
+    },
+    {
+      "case": "E4 GB18030 编码文件可读",
+      "pass": true,
+      "detail": "slots=1/5"
+    },
+    {
+      "case": "E5 中文/空格/括号文件名正常识别",
+      "pass": true,
+      "detail": "['张三', '李四']"
+    },
+    {
+      "case": "E6 >40MB 档案跳过内容分析（不崩）",
+      "pass": true,
+      "detail": "read_error='档案 >40MB，跳过内容分析'"
+    },
+    {
+      "case": "E7 tar.gz 形态 .skill 也能识别（不仅 ZIP）",
+      "pass": true,
+      "detail": "Tao_C4_my-skill.skill（有效技能包：2 个成员，SKILL.md frontmatter name="
+    },
+    {
+      "case": "E8 深层嵌套目录可递归扫描",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "case": "E9 版本混排生成版本轨迹（>=2 个版本）",
+      "pass": true,
+      "detail": "versions=['v1', 'v3']"
+    },
+    {
+      "case": "E10 --format json 不产生多余文件",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "case": "E11 无 SKILL.md 的 ZIP 不误判为有效技能包",
+      "pass": true,
+      "detail": "未发现可运行产物｜问题：Empty_C4_nothing.skill 是 ZIP 但内部没有 SKILL.md"
+    }
+  ]
+}

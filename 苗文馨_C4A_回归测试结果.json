@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-10-03 23:13:26",
+  "n_cases": 10,
+  "cases_perfect": 10,
+  "author_acc": 1.0,
+  "author_source_acc": 1.0,
+  "slot_acc": 1.0,
+  "grade_acc": 1.0,
+  "flag_acc": 1.0,
+  "fp_rate": 0.0,
+  "fn_rate": 0.0,
+  "counters": {
+    "slot": {
+      "total": 40,
+      "mismatch": 0
+    },
+    "grade": {
+      "total": 32,
+      "mismatch": 0
+    },
+    "flag": {
+      "total": 0,
+      "mismatch": 0
+    },
+    "author": {
+      "total": 10,
+      "mismatch": 0
+    },
+    "source": {
+      "total": 11,
+      "mismatch": 0
+    },
+    "other": {
+      "total": 0,
+      "mismatch": 0
+    }
+  },
+  "mismatches": []
+}

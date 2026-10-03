@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "reviewer": "WorkBuddy Agent（LLM 深审层）",
+    "reviewed_at": "2026-10-03 23:12",
+    "queue_file": "c4a_llm_queue.json",
+    "procedure": "对规则层产出 c4a_llm_queue.json 中的每位作者，逐条读 evidence_for_review 的原文片段，裁定 维持/升级/降级，并给出引用原文；不做无证据的调分。"
+  },
+  "authors": {
+    "（未按规范）skill-explainer": {
+      "dims": {
+        "reusable": {
+          "final_grade": "partial",
+          "reason": "升级 ⚠️：规则层把 /mnt/* 判为硬编码路径，但看原文，这些路径只出现在「按技能名解析已安装技能」的可选回退分支里（Case 3），主流程 Case 1/2 以用户传入的路径为准，陌生人拿过去仍可用。真正缺的是环境/依赖/平台说明，所以给 ⚠️ 而不是 ✅，也不该是 ❌。",
+          "quote": "resolve from `/mnt/skills/user/`, `/mnt/skills/public/`, or `/mnt/skills/examples/`"
+        },
+        "verifiable": {
+          "final_grade": "partial",
+          "reason": "维持 ⚠️：报告模板把输出结构写死了（可判成功与否），但没有任何 demo 证据，也没有「同样输入→同样输出」的确定性说明，规则层判定成立。",
+          "quote": "The report MUST follow this structure. Every section is required."
+        }
+      },
+      "llm_note": "规则层的四维评级与人工读原文的结论基本一致，唯「可复用」被硬编码路径规则误伤一级（规则只看到路径字符串，看不到它处于可选分支）。这正是需要 LLM 复核的典型场景。另：文档称 .skill 是 tar.gz，实测样本均为 ZIP，属于文档与实物不一致（评审器已同时兼容两种容器）。",
+      "next_actions": [
+        "在 SKILL.md 补「前置条件 / 环境要求 / 支持平台」小节",
+        "把 /mnt/skills/* 改为可配置搜索路径（或用环境变量），并在文档里说明该分支是可选的",
+        "补一个最小 demo（一张运行截图即可）与「确定性」说明"
+      ]
+    },
+    "（未按规范）wechat-doc-mapper": {
+      "dims": {
+        "reusable": {
+          "final_grade": "fail",
+          "reason": "维持 ❌：与 skill-explainer 不同，这里的 /mnt 路径是默认写入目标——脚本不给参数时直接往 /mnt/user-data/outputs/ 写，别人机器上没有这个挂载点，按文档直接跑就会失败；再加上没有平台/依赖安装说明（只列了库名），「陌生人照做能成功吗」的答案是「不一定」。",
+          "quote": "parser.add_argument(\"--output\", default=\"/mnt/user-data/outputs/elite20_doc_map.xlsx\")"
+        },
+        "clear_io": {
+          "final_grade": "partial",
+          "reason": "维持 ⚠️：SKILL.md 有散文式的 IO 交代（Given a folder path ... outputs a summary table plus an Excel），信息是够的，但缺「输入____，输出____」的一句话与参数级说明，不满足 C4 对「一目了然」的要求。",
+          "quote": "Given a local folder path ... Outputs a Markdown summary table (Author × Challenge) plus a downloadable Excel (.xlsx) file"
+        }
+      },
+      "llm_note": "两份课程技能包本身是「工具」，不是按 C4 五交付物规范提交的作业，所以完整性只有 1/5 是结构性问题而非质量缺陷——这一点必须在报告里讲清，否则会误读成「作者做得差」。它们真正值得学的地方是 wechat-doc-mapper 的「注册表外置（challenges.yaml）」设计，本技能已继承。",
+      "next_actions": [
+        "把 --output 默认值改为相对路径（如 ./elite20_doc_map.xlsx），并在文档给出参数示例",
+        "补一句话 IO 描述 + 参数表",
+        "把 dependencies（pyyaml/openpyxl/pypdf/python-pptx/pandas）写成 requirements.txt 或明确标注为可选依赖"
+      ]
+    },
+    "苗文馨": {
+      "dims": {},
+      "llm_note": "【利益相关声明】本样本是评审者本人（苗文馨）的 C4 提交，规则层给出 100 分。这条不加入任何调分，只做透明记录：① 该分数只覆盖「五交付物 + 四条件」的可自动判定部分，而 C4 官方最高权重指标是「被使用次数」，本次无法观测、未评分；② 满分意味着规则层找不到可指摘项，不代表它比别的技能更值得用；③ 同一把尺子对另外两份真实技能包给出更低分，恰恰说明这把尺子没有偏向自己人——它们低分是因为缺 C4 规范的交付物结构，而不是因为技能本身差。",
+      "next_actions": [
+        "把评审报告发到群里，请同学用自己的 C4 提交验证，收集误判案例用于 v2"
+      ]
+    }
+  }
+}

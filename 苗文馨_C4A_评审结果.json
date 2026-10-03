@@ -1,0 +1,1220 @@
+{
+  "meta": {
+    "generated_at": "2026-10-03 23:16:44",
+    "folder": "real_group",
+    "file_count": 11,
+    "conform_count": 9,
+    "rubric_hash": "ee449f57d866",
+    "evaluator_version": "1.0.0",
+    "extraction_capabilities": {
+      "pdf": true,
+      "docx": true,
+      "pptx": false
+    },
+    "degraded": [],
+    "warnings": [],
+    "scoring_weights": {
+      "completeness_weight": 0.4,
+      "quality_weight": 0.6,
+      "completeness_score": "sum(weight of present deliverables) / sum(all weights)",
+      "quality_score": "mean(criterion_score)  # criterion_score in [0,1]"
+    }
+  },
+  "authors": [
+    {
+      "completeness": {
+        "slots": {
+          "skill_doc": {
+            "label": "Skill 说明文档",
+            "weight": 1.0,
+            "present": true,
+            "strong": true,
+            "credit": 1.0,
+            "matches": [
+              {
+                "file": "苗文馨_C4_skill说明.md",
+                "how": "文件名匹配"
+              }
+            ],
+            "weak_matches": [
+              {
+                "file": "苗文馨_C4_AI日志.md",
+                "how": "内容识别（命中 3 个信号：输入/输出/问题）"
+              },
+              {
+                "file": "苗文馨_C4_deliverable-checker_SKILL.md",
+                "how": "内容识别（命中 3 个信号：输入/输出/问题）"
+              },
+              {
+                "file": "苗文馨_C4_教学说明.md",
+                "how": "内容识别（命中 3 个信号：输入/输出/问题）"
+              }
+            ],
+            "status": "✅",
+            "missing_hint": "补充《skill说明.md》：解决什么问题 / 使用场景 / 输入输出 / 使用步骤 / 真实案例"
+          },
+          "executable_content": {
+            "label": "可执行内容",
+            "weight": 1.0,
+            "present": true,
+            "strong": true,
+            "credit": 1.0,
+            "matches": [
+              {
+                "file": "苗文馨_C4_deliverable-checker.skill",
+                "how": "文件名匹配"
+              },
+              {
+                "file": "苗文馨_C4_deliverable-checker_SKILL.md",
+                "how": "文件名匹配"
+              }
+            ],
+            "weak_matches": [
+              {
+                "file": "苗文馨_C4_AI日志.md",
+                "how": "内容识别（命中 2 个信号：```/workflow）"
+              },
+              {
+                "file": "苗文馨_C4_skill说明.md",
+                "how": "内容识别（命中 2 个信号：```/步骤）"
+              }
+            ],
+            "status": "✅",
+            "missing_hint": "补充可执行内容：打包 .skill（ZIP，内含 SKILL.md）或附上 .py 脚本 / prompt 工作流"
+          },
+          "demo": {
+            "label": "Demo（媒体证据）",
+            "weight": 1.0,
+            "present": true,
+            "strong": true,
+            "credit": 1.0,
+            "matches": [
+              {
+                "file": "苗文馨_C4_demo截图1_缺漏检出.png",
+                "how": "文件名+媒体类型"
+              },
+              {
+                "file": "苗文馨_C4_demo截图2_全绿通过.png",
+                "how": "文件名+媒体类型"
+              }
+            ],
+            "weak_matches": [],
+            "status": "✅",
+            "missing_hint": "补充 demo：运行截图或录屏（.png/.jpg/.mp4），文件名含 demo"
+          },
+          "teaching_doc": {
+            "label": "教学说明",
+            "weight": 1.0,
+            "present": true,
+            "strong": true,
+            "credit": 1.0,
+            "matches": [
+              {
+                "file": "苗文馨_C4_教学说明.md",
+                "how": "文件名匹配"
+              }
+            ],
+            "weak_matches": [
+              {
+                "file": "苗文馨_C4_skill说明.md",
+                "how": "内容识别（命中 4 个信号：上手/安装/教/步骤）"
+              }
+            ],
+            "status": "✅",
+            "missing_hint": "补充《教学说明.md》：如何上手 / 常见坑 / 优化技巧（重点是可教性）"
+          },
+          "ai_log": {
+            "label": "AI 日志",
+            "weight": 1.0,
+            "present": true,
+            "strong": true,
+            "credit": 1.0,
+            "matches": [
+              {
+                "file": "苗文馨_C4_AI日志.md",
+                "how": "文件名匹配"
+              }
+            ],
+            "weak_matches": [],
+            "status": "✅",
+            "missing_hint": "补充《AI日志.md》：用了什么 AI / 怎么指挥 / 迭代了几轮 / 你做了什么"
+          }
+        },
+        "present_count": 5,
+        "slot_count": 5,
+        "completeness_score": 1.0,
+        "level": "✅ 齐全",
+        "missing": [],
+        "weak_only": [],
+        "notes": [],
+        "one_file_multi_slot": []
+      },
+      "quality": {
+        "criteria": {
+          "reusable": {
+            "label": "可复用 Reusable",
+            "weight": 0.25,
+            "raw_score": 1.0,
+            "score": 1.0,
+            "grade": "pass",
+            "icon": "✅",
+            "checks": [
+              {
+                "id": "R1",
+                "label": "有安装/环境说明",
+                "kind": "content",
+                "passed": true,
+                "skipped": false,
+                "evidence": "命中信号 prerequisites/python 3/依赖/安装 → 「ests.py 思路）——因祸得福。  **坑 3：pip 安装 Pillow 被网络策略拦截（SIGTERM×3）。** Demo 截图本来计」"
+              },
+              {
+                "id": "R2",
+                "label": "代码中无硬编码绝对路径",
+                "kind": "antipattern",
+                "passed": true,
+                "skipped": false,
+                "evidence": "代码范围内未发现硬编码绝对路径"
+              },
+              {
+                "id": "R3",
+                "label": "依赖声明清晰（零依赖或列明依赖）",
+                "kind": "content",
+                "passed": true,
+                "skipped": false,
+                "evidence": "命中信号 仅标准库/标准库/零依赖 → 「条件全部满足： - 可复用：只需 Python 3 标准库，零依赖，任何机器能跑 - 可执行：确定性 Python 脚本，不是\"感觉上应该交齐了\"」"
+              },
+              {
+                "id": "R4",
+                "label": "平台/兼容性说明",
+                "kind": "regex",
+                "passed": true,
+                "skipped": false,
+                "evidence": "匹配 `Windows` → 「划用 PIL 渲染。处置：**不换目标，换路径**——改用 Windows 自带的 GDI+（System.Drawing）渲染终端风格截图，零第三方依赖」"
+              },
+              {
+                "id": "R5",
+                "label": "泛化/可迁移说明（不绑定作者环境）",
+                "kind": "content",
+                "passed": true,
+                "skipped": false,
+                "evidence": "命中信号 不绑定/任何/任意/你的提交/换成你 → 「满足： - 可复用：只需 Python 3 标准库，零依赖，任何机器能跑 - 可执行：确定性 Python 脚本，不是\"感觉上应该交齐了\" -」"
+              }
+            ],
+            "cap_note": "",
+            "failed": []
+          },
+          "executable": {
+            "label": "可执行 Executable",
+            "weight": 0.25,
+            "raw_score": 1.0,
+            "score": 1.0,
+            "grade": "pass",
+            "icon": "✅",
+            "checks": [
+              {
+                "id": "E1",
+                "label": "存在真正可运行的产物（.skill 包结构有效 / .py 可解析 / 指令型 .md 有 frontmatter）",
+                "kind": "runnable_artifact",
+                "passed": true,
+                "skipped": false,
+                "evidence": "苗文馨_C4_deliverable-checker.skill（有效技能包：3 个成员，SKILL.md frontmatter name=deliverable-checker）；苗文馨_C4_deliverable-checker_SKILL.md（指令型技能，frontmatter 完整）"
+              },
+              {
+                "id": "E2",
+                "label": "含代码块或可执行工作流",
+                "kind": "regex",
+                "passed": true,
+                "skipped": false,
+                "evidence": "匹配 ````` → 「CHALLENGE.md 第七节的标准结构搭出技能包：  ``` deliverable-checker/ ├── SKILL.md」"
+              },
+              {
+                "id": "E3",
+                "label": "SKILL.md 有有效 YAML frontmatter（name + description）",
+                "kind": "frontmatter",
+                "passed": true,
+                "skipped": false,
+                "evidence": "苗文馨_C4_deliverable-checker.skill → name=deliverable-checker；苗文馨_C4_deliverable-checker_SKILL.md → name=deliverable-checker"
+              },
+              {
+                "id": "E4",
+                "label": "有明确调用方式（CLI 参数 / 触发语 / 命令示例）",
+                "kind": "regex",
+                "passed": true,
+                "skipped": false,
+                "evidence": "匹配 `python\\s+\\S+\\.py` → 「— Locate the inputs  ```bash python deliverable_checker.py \\   --challenge \"E:/挑战合集/挑战_C2_完整资料\" \\」"
+              },
+              {
+                "id": "E5",
+                "label": "随包脚本语法正确（AST 可解析）",
+                "kind": "py_syntax",
+                "passed": false,
+                "skipped": true,
+                "evidence": "不适用：本提交不含独立 Python 脚本"
+              }
+            ],
+            "cap_note": "",
+            "failed": []
+          },
+          "verifiable": {
+            "label": "可验证 Verifiable",
+            "weight": 0.25,
+            "raw_score": 1.0,
+            "score": 1.0,
+            "grade": "pass",
+            "icon": "✅",
+            "checks": [
+              {
+                "id": "V1",
+                "label": "有测试用例 / 示例",
+                "kind": "content",
+                "passed": true,
+                "skipped": false,
+                "evidence": "命中信号 example/test/实测/案例/测试 → 「功能正确，发现 1 个评分映射误判 | | R3 | 边界测试 + 修复 | ✅ 5 项边界全过，脚本升 v1.2 | | R4 | 打包 +」"
+              },
+              {
+                "id": "V2",
+                "label": "定义了预期输出（预期结果/报告结构/退出码）",
+                "kind": "content",
+                "passed": true,
+                "skipped": false,
+                "evidence": "命中信号 退出码 → 「被检出、命名违规（`笔记.md`）被标记、 2 个红旗触发、退出码 1。  **⚠️ 发现的真问题：** `苗文馨_C4_skill说明.md`」"
+              },
+              {
+                "id": "V3",
+                "label": "有 demo 媒体或可复现证据",
+                "kind": "media_or_content",
+                "passed": true,
+                "skipped": false,
+                "evidence": "存在媒体文件：苗文馨_C4_demo截图1_缺漏检出.png、苗文馨_C4_demo截图2_全绿通过.png"
+              },
+              {
+                "id": "V4",
+                "label": "可复跑/确定性说明（同样输入→同样输出）",
+                "kind": "content",
+                "passed": true,
+                "skipped": false,
+                "evidence": "命中信号 可复跑/同样输入/回归/每次/确定性 → 「ipts/deliverable_checker.py # 确定性核对脚本（约 300 行） └── references/rubric-guid」"
+              }
+            ],
+            "cap_note": "",
+            "failed": []
+          },
+          "clear_io": {
+            "label": "IO 明确 Clear I/O",
+            "weight": 0.25,
+            "raw_score": 1.0,
+            "score": 1.0,
+            "grade": "pass",
+            "icon": "✅",
+            "checks": [
+              {
+                "id": "I1",
+                "label": "有一句话 IO 描述（输入…输出…）",
+                "kind": "regex",
+                "passed": true,
+                "skipped": false,
+                "evidence": "匹配 `输入[^\\n]{0,100}输出` → 「\"针对 SKILL.md 里列的 8 种边界情况，逐一构造输入验证，输出测试矩阵\"  **测试矩阵（全部通过）：**  | 边界情况 | 构造方式 |」"
+              },
+              {
+                "id": "I2",
+                "label": "输入规格明确（类型/格式/路径/参数）",
+                "kind": "regex",
+                "passed": true,
+                "skipped": false,
+                "evidence": "匹配 `输入[：:]` → 「结果.json] [--pattern \"a,b,c\"]  输入:     --challenge   含 challenge.json 的挑战资」"
+              },
+              {
+                "id": "I3",
+                "label": "输出规格明确（类型/格式）",
+                "kind": "regex",
+                "passed": true,
+                "skipped": false,
+                "evidence": "匹配 `输出[：:]` → 「--submission  学生提交文件夹（递归扫描） 输出:     Markdown 自查报告（stdout 或 --output 落盘）」"
+              },
+              {
+                "id": "I4",
+                "label": "边界/异常输入说明",
+                "kind": "content",
+                "passed": true,
+                "skipped": false,
+                "evidence": "命中信号 edge case/不存在/不崩溃/异常/空文件夹 → 「✅ 功能正确，发现 1 个评分映射误判 | | R3 | 边界测试 + 修复 | ✅ 5 项边界全过，脚本升 v1.2 | | R4 | 打包」"
+              }
+            ],
+            "cap_note": "",
+            "failed": []
+          }
+        },
+        "quality_score": 1.0,
+        "corpus_chars": 33626
+      },
+      "flags": [],
+      "routing_signals": [],
+      "composite": 100.0,
+      "advice": [
+        "把评审报告发到群里，请同学用自己的 C4 提交验证，收集误判案例用于 v2"
+      ],
+      "author": "苗文馨",
+      "author_source": "filename",
+      "file_count": 9,
+      "file_names": [
+        "苗文馨_C4_AI日志.md",
+        "苗文馨_C4_deliverable-checker.skill",
+        "苗文馨_C4_deliverable-checker_rubric-guide.md",
+        "苗文馨_C4_deliverable-checker_SKILL.md",
+        "苗文馨_C4_demo截图1_缺漏检出.png",
+        "苗文馨_C4_demo截图2_全绿通过.png",
+        "苗文馨_C4_skill说明.md",
+        "苗文馨_C4_提交前自查报告.md",
+        "苗文馨_C4_教学说明.md"
+      ],
+      "llm_note": "【利益相关声明】本样本是评审者本人（苗文馨）的 C4 提交，规则层给出 100 分。这条不加入任何调分，只做透明记录：① 该分数只覆盖「五交付物 + 四条件」的可自动判定部分，而 C4 官方最高权重指标是「被使用次数」，本次无法观测、未评分；② 满分意味着规则层找不到可指摘项，不代表它比别的技能更值得用；③ 同一把尺子对另外两份真实技能包给出更低分，恰恰说明这把尺子没有偏向自己人——它们低分是因为缺 C4 规范的交付物结构，而不是因为技能本身差。"
+    },
+    {
+      "completeness": {
+        "slots": {
+          "skill_doc": {
+            "label": "Skill 说明文档",
+            "weight": 1.0,
+            "present": false,
+            "strong": false,
+            "credit": 0.0,
+            "matches": [],
+            "weak_matches": [],
+            "status": "❌",
+            "missing_hint": "补充《skill说明.md》：解决什么问题 / 使用场景 / 输入输出 / 使用步骤 / 真实案例"
+          },
+          "executable_content": {
+            "label": "可执行内容",
+            "weight": 1.0,
+            "present": true,
+            "strong": true,
+            "credit": 1.0,
+            "matches": [
+              {
+                "file": "skill-explainer.skill",
+                "how": "文件名匹配"
+              }
+            ],
+            "weak_matches": [],
+            "status": "✅",
+            "missing_hint": "补充可执行内容：打包 .skill（ZIP，内含 SKILL.md）或附上 .py 脚本 / prompt 工作流"
+          },
+          "demo": {
+            "label": "Demo（媒体证据）",
+            "weight": 1.0,
+            "present": false,
+            "strong": false,
+            "credit": 0.0,
+            "matches": [],
+            "weak_matches": [],
+            "status": "❌",
+            "missing_hint": "补充 demo：运行截图或录屏（.png/.jpg/.mp4），文件名含 demo"
+          },
+          "teaching_doc": {
+            "label": "教学说明",
+            "weight": 1.0,
+            "present": false,
+            "strong": false,
+            "credit": 0.0,
+            "matches": [],
+            "weak_matches": [],
+            "status": "❌",
+            "missing_hint": "补充《教学说明.md》：如何上手 / 常见坑 / 优化技巧（重点是可教性）"
+          },
+          "ai_log": {
+            "label": "AI 日志",
+            "weight": 1.0,
+            "present": false,
+            "strong": false,
+            "credit": 0.0,
+            "matches": [],
+            "weak_matches": [],
+            "status": "❌",
+            "missing_hint": "补充《AI日志.md》：用了什么 AI / 怎么指挥 / 迭代了几轮 / 你做了什么"
+          }
+        },
+        "present_count": 1,
+        "slot_count": 5,
+        "completeness_score": 0.2,
+        "level": "❌ 严重缺失",
+        "missing": [
+          "Skill 说明文档",
+          "Demo（媒体证据）",
+          "教学说明",
+          "AI 日志"
+        ],
+        "weak_only": [],
+        "notes": [],
+        "one_file_multi_slot": []
+      },
+      "quality": {
+        "criteria": {
+          "reusable": {
+            "label": "可复用 Reusable",
+            "weight": 0.25,
+            "raw_score": 0.2,
+            "score": 0.5,
+            "grade": "partial",
+            "icon": "⚠️",
+            "checks": [
+              {
+                "id": "R1",
+                "label": "有安装/环境说明",
+                "kind": "content",
+                "passed": true,
+                "skipped": false,
+                "evidence": "命中信号 install/requirements → 「L.md` - **A skill name** — if installed, resolve from `/mnt/skills/user/`, `/」"
+              },
+              {
+                "id": "R2",
+                "label": "代码中无硬编码绝对路径",
+                "kind": "antipattern",
+                "passed": false,
+                "skipped": false,
+                "evidence": "代码中发现 6 处硬编码路径：/mnt/ (第 35 行) 「installed, resolve from `/mnt/skills/user/`, `/mnt/skil」"
+              },
+              {
+                "id": "R3",
+                "label": "依赖声明清晰（零依赖或列明依赖）",
+                "kind": "content",
+                "passed": false,
+                "skipped": false,
+                "evidence": ""
+              },
+              {
+                "id": "R4",
+                "label": "平台/兼容性说明",
+                "kind": "regex",
+                "passed": false,
+                "skipped": false,
+                "evidence": ""
+              },
+              {
+                "id": "R5",
+                "label": "泛化/可迁移说明（不绑定作者环境）",
+                "kind": "content",
+                "passed": false,
+                "skipped": false,
+                "evidence": ""
+              }
+            ],
+            "cap_note": "",
+            "failed": [
+              "代码中无硬编码绝对路径",
+              "依赖声明清晰（零依赖或列明依赖）",
+              "平台/兼容性说明",
+              "泛化/可迁移说明（不绑定作者环境）"
+            ],
+            "rule_grade": "fail",
+            "llm_reason": "升级 ⚠️：规则层把 /mnt/* 判为硬编码路径，但看原文，这些路径只出现在「按技能名解析已安装技能」的可选回退分支里（Case 3），主流程 Case 1/2 以用户传入的路径为准，陌生人拿过去仍可用。真正缺的是环境/依赖/平台说明，所以给 ⚠️ 而不是 ✅，也不该是 ❌。",
+            "llm_quote": "resolve from `/mnt/skills/user/`, `/mnt/skills/public/`, or `/mnt/skills/examples/`"
+          },
+          "executable": {
+            "label": "可执行 Executable",
+            "weight": 0.25,
+            "raw_score": 1.0,
+            "score": 1.0,
+            "grade": "pass",
+            "icon": "✅",
+            "checks": [
+              {
+                "id": "E1",
+                "label": "存在真正可运行的产物（.skill 包结构有效 / .py 可解析 / 指令型 .md 有 frontmatter）",
+                "kind": "runnable_artifact",
+                "passed": true,
+                "skipped": false,
+                "evidence": "skill-explainer.skill（有效技能包：2 个成员，SKILL.md frontmatter name=skill-explainer）"
+              },
+              {
+                "id": "E2",
+                "label": "含代码块或可执行工作流",
+                "kind": "regex",
+                "passed": true,
+                "skipped": false,
+                "evidence": "匹配 ````` → 「Resolve and unpack the skill  ```python import tarfile, tempfile, shutil」"
+              },
+              {
+                "id": "E3",
+                "label": "SKILL.md 有有效 YAML frontmatter（name + description）",
+                "kind": "frontmatter",
+                "passed": true,
+                "skipped": false,
+                "evidence": "skill-explainer.skill → name=skill-explainer"
+              },
+              {
+                "id": "E4",
+                "label": "有明确调用方式（CLI 参数 / 触发语 / 命令示例）",
+                "kind": "regex",
+                "passed": true,
+                "skipped": false,
+                "evidence": "匹配 `Usage` → 「architecture, key references, usage guide,   and surface-level critique wit」"
+              },
+              {
+                "id": "E5",
+                "label": "随包脚本语法正确（AST 可解析）",
+                "kind": "py_syntax",
+                "passed": false,
+                "skipped": true,
+                "evidence": "不适用：本提交不含独立 Python 脚本"
+              }
+            ],
+            "cap_note": "",
+            "failed": []
+          },
+          "verifiable": {
+            "label": "可验证 Verifiable",
+            "weight": 0.25,
+            "raw_score": 0.5,
+            "score": 0.5,
+            "grade": "partial",
+            "icon": "⚠️",
+            "checks": [
+              {
+                "id": "V1",
+                "label": "有测试用例 / 示例",
+                "kind": "content",
+                "passed": true,
+                "skipped": false,
+                "evidence": "命中信号 example/test/示例 → 「es on implicit knowledge |  **Test question:** If you replaced every prope」"
+              },
+              {
+                "id": "V2",
+                "label": "定义了预期输出（预期结果/报告结构/退出码）",
+                "kind": "content",
+                "passed": true,
+                "skipped": false,
+                "evidence": "命中信号 expected → 「:** What must be provided - **Expected outputs:** What gets produced - **Examp」"
+              },
+              {
+                "id": "V3",
+                "label": "有 demo 媒体或可复现证据",
+                "kind": "media_or_content",
+                "passed": false,
+                "skipped": false,
+                "evidence": "无媒体、无文字提及"
+              },
+              {
+                "id": "V4",
+                "label": "可复跑/确定性说明（同样输入→同样输出）",
+                "kind": "content",
+                "passed": false,
+                "skipped": false,
+                "evidence": ""
+              }
+            ],
+            "cap_note": "",
+            "failed": [
+              "有 demo 媒体或可复现证据",
+              "可复跑/确定性说明（同样输入→同样输出）"
+            ],
+            "rule_grade": "partial",
+            "llm_reason": "维持 ⚠️：报告模板把输出结构写死了（可判成功与否），但没有任何 demo 证据，也没有「同样输入→同样输出」的确定性说明，规则层判定成立。",
+            "llm_quote": "The report MUST follow this structure. Every section is required."
+          },
+          "clear_io": {
+            "label": "IO 明确 Clear I/O",
+            "weight": 0.25,
+            "raw_score": 1.0,
+            "score": 1.0,
+            "grade": "pass",
+            "icon": "✅",
+            "checks": [
+              {
+                "id": "I1",
+                "label": "有一句话 IO 描述（输入…输出…）",
+                "kind": "regex",
+                "passed": true,
+                "skipped": false,
+                "evidence": "匹配 `input[^\\n]{0,80}output` → 「has a clear progression from input → processing → output.  | Rating | Criteria | |--------|-----」"
+              },
+              {
+                "id": "I2",
+                "label": "输入规格明确（类型/格式/路径/参数）",
+                "kind": "regex",
+                "passed": true,
+                "skipped": false,
+                "evidence": "匹配 `Input` → 「l file or skill directory) as input and produces   a structured Markdown ex」"
+              },
+              {
+                "id": "I3",
+                "label": "输出规格明确（类型/格式）",
+                "kind": "regex",
+                "passed": true,
+                "skipped": false,
+                "evidence": "匹配 `Markdown` → 「t and produces   a structured Markdown explanation covering purpose, architect」"
+              },
+              {
+                "id": "I4",
+                "label": "边界/异常输入说明",
+                "kind": "content",
+                "passed": true,
+                "skipped": false,
+                "evidence": "命中信号 edge case/边界 → 「se|corner case|error|fallback|边界)', body))      return {         'frontm」"
+              }
+            ],
+            "cap_note": "",
+            "failed": []
+          }
+        },
+        "quality_score": 0.75,
+        "corpus_chars": 13214
+      },
+      "flags": [
+        {
+          "id": "missing_artifacts",
+          "label": "核心交付物缺失",
+          "max_penalty": 5,
+          "rule": "any_required_missing",
+          "detail": "缺失：Skill 说明文档、Demo（媒体证据）、教学说明、AI 日志"
+        },
+        {
+          "id": "no_ai_log",
+          "label": "无 AI 使用记录/AAR",
+          "max_penalty": 5,
+          "rule": "ai_log_missing",
+          "detail": "未发现 *AI日志*/*AI_log*/*AAR*/*复盘* 文件，且内容信号不足"
+        },
+        {
+          "id": "hardcoded_paths",
+          "label": "代码中硬编码作者本机绝对路径",
+          "max_penalty": 4,
+          "rule": "R2_failed",
+          "detail": "代码中发现 6 处硬编码路径：/mnt/ (第 35 行) 「installed, resolve from `/mnt/skills/user/`, `/mnt/skil」"
+        },
+        {
+          "id": "naming_nonconforming",
+          "label": "多数文件不符合命名规范（回退识别）",
+          "max_penalty": 2,
+          "rule": "naming_ratio_below_0.5",
+          "detail": "1/1 个文件未按 `姓名_C4_说明.ext` 命名，已用回退链识别"
+        }
+      ],
+      "routing_signals": [],
+      "composite": 53.0,
+      "advice": [
+        "在 SKILL.md 补「前置条件 / 环境要求 / 支持平台」小节",
+        "把 /mnt/skills/* 改为可配置搜索路径（或用环境变量），并在文档里说明该分支是可选的",
+        "补一个最小 demo（一张运行截图即可）与「确定性」说明",
+        "【必补·交付物】Skill 说明文档：补充《skill说明.md》：解决什么问题 / 使用场景 / 输入输出 / 使用步骤 / 真实案例",
+        "【必补·交付物】Demo（媒体证据）：补充 demo：运行截图或录屏（.png/.jpg/.mp4），文件名含 demo",
+        "【必补·交付物】教学说明：补充《教学说明.md》：如何上手 / 常见坑 / 优化技巧（重点是可教性）",
+        "【必补·交付物】AI 日志：补充《AI日志.md》：用了什么 AI / 怎么指挥 / 迭代了几轮 / 你做了什么",
+        "【关键·可复用 Reusable】把代码里的本机绝对路径改成命令行参数或配置文件，并在文档里给出占位符示例",
+        "【关键·可复用 Reusable】明确写清「零依赖（仅标准库）」或列出 requirements；别人才能判断装不装得上",
+        "【关键·可复用 Reusable】补一句平台说明（Windows / macOS / Linux 是否都支持，有没有平台限制）",
+        "【关键·可复用 Reusable】补「泛化说明」：你的技能在别人的目录 / 别人的挑战上怎么改两个参数就能用"
+      ],
+      "author": "（未按规范）skill-explainer",
+      "author_source": "skill_package_name",
+      "file_count": 1,
+      "file_names": [
+        "skill-explainer.skill"
+      ],
+      "llm_note": "规则层的四维评级与人工读原文的结论基本一致，唯「可复用」被硬编码路径规则误伤一级（规则只看到路径字符串，看不到它处于可选分支）。这正是需要 LLM 复核的典型场景。另：文档称 .skill 是 tar.gz，实测样本均为 ZIP，属于文档与实物不一致（评审器已同时兼容两种容器）。"
+    },
+    {
+      "completeness": {
+        "slots": {
+          "skill_doc": {
+            "label": "Skill 说明文档",
+            "weight": 1.0,
+            "present": false,
+            "strong": false,
+            "credit": 0.0,
+            "matches": [],
+            "weak_matches": [],
+            "status": "❌",
+            "missing_hint": "补充《skill说明.md》：解决什么问题 / 使用场景 / 输入输出 / 使用步骤 / 真实案例"
+          },
+          "executable_content": {
+            "label": "可执行内容",
+            "weight": 1.0,
+            "present": true,
+            "strong": true,
+            "credit": 1.0,
+            "matches": [
+              {
+                "file": "wechat-doc-mapper.skill",
+                "how": "文件名匹配"
+              }
+            ],
+            "weak_matches": [],
+            "status": "✅",
+            "missing_hint": "补充可执行内容：打包 .skill（ZIP，内含 SKILL.md）或附上 .py 脚本 / prompt 工作流"
+          },
+          "demo": {
+            "label": "Demo（媒体证据）",
+            "weight": 1.0,
+            "present": false,
+            "strong": false,
+            "credit": 0.0,
+            "matches": [],
+            "weak_matches": [],
+            "status": "❌",
+            "missing_hint": "补充 demo：运行截图或录屏（.png/.jpg/.mp4），文件名含 demo"
+          },
+          "teaching_doc": {
+            "label": "教学说明",
+            "weight": 1.0,
+            "present": false,
+            "strong": false,
+            "credit": 0.0,
+            "matches": [],
+            "weak_matches": [],
+            "status": "❌",
+            "missing_hint": "补充《教学说明.md》：如何上手 / 常见坑 / 优化技巧（重点是可教性）"
+          },
+          "ai_log": {
+            "label": "AI 日志",
+            "weight": 1.0,
+            "present": false,
+            "strong": false,
+            "credit": 0.0,
+            "matches": [],
+            "weak_matches": [],
+            "status": "❌",
+            "missing_hint": "补充《AI日志.md》：用了什么 AI / 怎么指挥 / 迭代了几轮 / 你做了什么"
+          }
+        },
+        "present_count": 1,
+        "slot_count": 5,
+        "completeness_score": 0.2,
+        "level": "❌ 严重缺失",
+        "missing": [
+          "Skill 说明文档",
+          "Demo（媒体证据）",
+          "教学说明",
+          "AI 日志"
+        ],
+        "weak_only": [],
+        "notes": [],
+        "one_file_multi_slot": []
+      },
+      "quality": {
+        "criteria": {
+          "reusable": {
+            "label": "可复用 Reusable",
+            "weight": 0.25,
+            "raw_score": 0.2,
+            "score": 0.0,
+            "grade": "fail",
+            "icon": "❌",
+            "checks": [
+              {
+                "id": "R1",
+                "label": "有安装/环境说明",
+                "kind": "content",
+                "passed": true,
+                "skipped": false,
+                "evidence": "命中信号 prerequisites/python 3 → 「Prerequisites  ### Runtime - Python 3 with `openpyxl`, `pypdf`, `python-pptx`」"
+              },
+              {
+                "id": "R2",
+                "label": "代码中无硬编码绝对路径",
+                "kind": "antipattern",
+                "passed": false,
+                "skipped": false,
+                "evidence": "代码中发现 5 处硬编码路径：/mnt/ (第 32 行) 「ble - The xlsx skill at `/mnt/skills/public/xlsx/SKILL.」"
+              },
+              {
+                "id": "R3",
+                "label": "依赖声明清晰（零依赖或列明依赖）",
+                "kind": "content",
+                "passed": false,
+                "skipped": false,
+                "evidence": ""
+              },
+              {
+                "id": "R4",
+                "label": "平台/兼容性说明",
+                "kind": "regex",
+                "passed": false,
+                "skipped": false,
+                "evidence": ""
+              },
+              {
+                "id": "R5",
+                "label": "泛化/可迁移说明（不绑定作者环境）",
+                "kind": "content",
+                "passed": false,
+                "skipped": false,
+                "evidence": ""
+              }
+            ],
+            "cap_note": "",
+            "failed": [
+              "代码中无硬编码绝对路径",
+              "依赖声明清晰（零依赖或列明依赖）",
+              "平台/兼容性说明",
+              "泛化/可迁移说明（不绑定作者环境）"
+            ],
+            "rule_grade": "fail",
+            "llm_reason": "维持 ❌：与 skill-explainer 不同，这里的 /mnt 路径是默认写入目标——脚本不给参数时直接往 /mnt/user-data/outputs/ 写，别人机器上没有这个挂载点，按文档直接跑就会失败；再加上没有平台/依赖安装说明（只列了库名），「陌生人照做能成功吗」的答案是「不一定」。",
+            "llm_quote": "parser.add_argument(\"--output\", default=\"/mnt/user-data/outputs/elite20_doc_map.xlsx\")"
+          },
+          "executable": {
+            "label": "可执行 Executable",
+            "weight": 0.25,
+            "raw_score": 1.0,
+            "score": 1.0,
+            "grade": "pass",
+            "icon": "✅",
+            "checks": [
+              {
+                "id": "E1",
+                "label": "存在真正可运行的产物（.skill 包结构有效 / .py 可解析 / 指令型 .md 有 frontmatter）",
+                "kind": "runnable_artifact",
+                "passed": true,
+                "skipped": false,
+                "evidence": "wechat-doc-mapper.skill（有效技能包：3 个成员，SKILL.md frontmatter name=wechat-doc-mapper）"
+              },
+              {
+                "id": "E2",
+                "label": "含代码块或可执行工作流",
+                "kind": "regex",
+                "passed": true,
+                "skipped": false,
+                "evidence": "匹配 ````` → 「follow this naming pattern:  ``` <Author>_<ChallengeID>_<Part>.<ext> ```」"
+              },
+              {
+                "id": "E3",
+                "label": "SKILL.md 有有效 YAML frontmatter（name + description）",
+                "kind": "frontmatter",
+                "passed": true,
+                "skipped": false,
+                "evidence": "wechat-doc-mapper.skill → name=wechat-doc-mapper"
+              },
+              {
+                "id": "E4",
+                "label": "有明确调用方式（CLI 参数 / 触发语 / 命令示例）",
+                "kind": "regex",
+                "passed": true,
+                "skipped": false,
+                "evidence": "匹配 `--\\w+` → 「_doc_mapper.py <FOLDER_PATH> [--output OUTPUT_XLSX]  Outputs:     - JSON inven」"
+              },
+              {
+                "id": "E5",
+                "label": "随包脚本语法正确（AST 可解析）",
+                "kind": "py_syntax",
+                "passed": false,
+                "skipped": true,
+                "evidence": "不适用：本提交不含独立 Python 脚本"
+              }
+            ],
+            "cap_note": "",
+            "failed": []
+          },
+          "verifiable": {
+            "label": "可验证 Verifiable",
+            "weight": 0.25,
+            "raw_score": 0.75,
+            "score": 1.0,
+            "grade": "pass",
+            "icon": "✅",
+            "checks": [
+              {
+                "id": "V1",
+                "label": "有测试用例 / 示例",
+                "kind": "content",
+                "passed": true,
+                "skipped": false,
+                "evidence": "命中信号 example/案例/测试 → 「献 (References)\",     \"quiz\": \"测试 (Quiz)\",     \"exam\": \"考试 (Exam)\",     \"」"
+              },
+              {
+                "id": "V2",
+                "label": "定义了预期输出（预期结果/报告结构/退出码）",
+                "kind": "content",
+                "passed": true,
+                "skipped": false,
+                "evidence": "命中信号 expected → 「ifact in challenges[cid].get(\"expected_artifacts\", []):                 artifa」"
+              },
+              {
+                "id": "V3",
+                "label": "有 demo 媒体或可复现证据",
+                "kind": "media_or_content",
+                "passed": true,
+                "skipped": false,
+                "evidence": "仅文字提及：或 .md — 可执行内容\"       - \"姓名_C4_demo.mp4 或截图 — Demo\"       - \"姓名_C4_教学说明.md"
+              },
+              {
+                "id": "V4",
+                "label": "可复跑/确定性说明（同样输入→同样输出）",
+                "kind": "content",
+                "passed": false,
+                "skipped": false,
+                "evidence": ""
+              }
+            ],
+            "cap_note": "",
+            "failed": [
+              "可复跑/确定性说明（同样输入→同样输出）"
+            ]
+          },
+          "clear_io": {
+            "label": "IO 明确 Clear I/O",
+            "weight": 0.25,
+            "raw_score": 0.5,
+            "score": 0.5,
+            "grade": "partial",
+            "icon": "⚠️",
+            "checks": [
+              {
+                "id": "I1",
+                "label": "有一句话 IO 描述（输入…输出…）",
+                "kind": "regex",
+                "passed": false,
+                "skipped": false,
+                "evidence": ""
+              },
+              {
+                "id": "I2",
+                "label": "输入规格明确（类型/格式/路径/参数）",
+                "kind": "regex",
+                "passed": false,
+                "skipped": false,
+                "evidence": ""
+              },
+              {
+                "id": "I3",
+                "label": "输出规格明确（类型/格式）",
+                "kind": "regex",
+                "passed": true,
+                "skipped": false,
+                "evidence": "匹配 `Markdown` → 「Elite20 challenges. Outputs a Markdown summary table (Author × Challenge) plus」"
+              },
+              {
+                "id": "I4",
+                "label": "边界/异常输入说明",
+                "kind": "content",
+                "passed": true,
+                "skipped": false,
+                "evidence": "命中信号 edge case → 「ferences.bib — 需要补充参考文献。\"  ## Edge Cases  - **Files not following naming conven」"
+              }
+            ],
+            "cap_note": "",
+            "failed": [
+              "有一句话 IO 描述（输入…输出…）",
+              "输入规格明确（类型/格式/路径/参数）"
+            ],
+            "rule_grade": "partial",
+            "llm_reason": "维持 ⚠️：SKILL.md 有散文式的 IO 交代（Given a folder path ... outputs a summary table plus an Excel），信息是够的，但缺「输入____，输出____」的一句话与参数级说明，不满足 C4 对「一目了然」的要求。",
+            "llm_quote": "Given a local folder path ... Outputs a Markdown summary table (Author × Challenge) plus a downloadable Excel (.xlsx) file"
+          }
+        },
+        "quality_score": 0.625,
+        "corpus_chars": 37527
+      },
+      "flags": [
+        {
+          "id": "missing_artifacts",
+          "label": "核心交付物缺失",
+          "max_penalty": 5,
+          "rule": "any_required_missing",
+          "detail": "缺失：Skill 说明文档、Demo（媒体证据）、教学说明、AI 日志"
+        },
+        {
+          "id": "no_ai_log",
+          "label": "无 AI 使用记录/AAR",
+          "max_penalty": 5,
+          "rule": "ai_log_missing",
+          "detail": "未发现 *AI日志*/*AI_log*/*AAR*/*复盘* 文件，且内容信号不足"
+        },
+        {
+          "id": "hardcoded_paths",
+          "label": "代码中硬编码作者本机绝对路径",
+          "max_penalty": 4,
+          "rule": "R2_failed",
+          "detail": "代码中发现 5 处硬编码路径：/mnt/ (第 32 行) 「ble - The xlsx skill at `/mnt/skills/public/xlsx/SKILL.」"
+        },
+        {
+          "id": "naming_nonconforming",
+          "label": "多数文件不符合命名规范（回退识别）",
+          "max_penalty": 2,
+          "rule": "naming_ratio_below_0.5",
+          "detail": "1/1 个文件未按 `姓名_C4_说明.ext` 命名，已用回退链识别"
+        }
+      ],
+      "routing_signals": [],
+      "composite": 45.5,
+      "advice": [
+        "把 --output 默认值改为相对路径（如 ./elite20_doc_map.xlsx），并在文档给出参数示例",
+        "补一句话 IO 描述 + 参数表",
+        "把 dependencies（pyyaml/openpyxl/pypdf/python-pptx/pandas）写成 requirements.txt 或明确标注为可选依赖",
+        "【必补·交付物】Skill 说明文档：补充《skill说明.md》：解决什么问题 / 使用场景 / 输入输出 / 使用步骤 / 真实案例",
+        "【必补·交付物】Demo（媒体证据）：补充 demo：运行截图或录屏（.png/.jpg/.mp4），文件名含 demo",
+        "【必补·交付物】教学说明：补充《教学说明.md》：如何上手 / 常见坑 / 优化技巧（重点是可教性）",
+        "【必补·交付物】AI 日志：补充《AI日志.md》：用了什么 AI / 怎么指挥 / 迭代了几轮 / 你做了什么",
+        "【关键·可复用 Reusable】把代码里的本机绝对路径改成命令行参数或配置文件，并在文档里给出占位符示例",
+        "【关键·可复用 Reusable】明确写清「零依赖（仅标准库）」或列出 requirements；别人才能判断装不装得上",
+        "【关键·可复用 Reusable】补一句平台说明（Windows / macOS / Linux 是否都支持，有没有平台限制）",
+        "【关键·可复用 Reusable】补「泛化说明」：你的技能在别人的目录 / 别人的挑战上怎么改两个参数就能用",
+        "【改进·IO 明确 Clear I/O】在文档最显眼处补一句话：输入____，输出____",
+        "【改进·IO 明确 Clear I/O】写清输入规格：是文件夹路径？文件？参数名和格式是什么"
+      ],
+      "author": "（未按规范）wechat-doc-mapper",
+      "author_source": "skill_package_name",
+      "file_count": 1,
+      "file_names": [
+        "wechat-doc-mapper.skill"
+      ],
+      "llm_note": "两份课程技能包本身是「工具」，不是按 C4 五交付物规范提交的作业，所以完整性只有 1/5 是结构性问题而非质量缺陷——这一点必须在报告里讲清，否则会误读成「作者做得差」。它们真正值得学的地方是 wechat-doc-mapper 的「注册表外置（challenges.yaml）」设计，本技能已继承。"
+    }
+  ],
+  "llm_queue": [],
+  "file_table": [
+    {
+      "rel": "skill-explainer.skill",
+      "name": "skill-explainer.skill",
+      "ext": ".skill",
+      "size_kb": 6.08,
+      "modified": "2026-10-03 23:08",
+      "subfolder": "",
+      "convention_ok": false,
+      "author_hint": null,
+      "part": "skill-explainer",
+      "version": null,
+      "read_error": "",
+      "owner": "（未按规范）skill-explainer"
+    },
+    {
+      "rel": "wechat-doc-mapper.skill",
+      "name": "wechat-doc-mapper.skill",
+      "ext": ".skill",
+      "size_kb": 14.43,
+      "modified": "2026-10-03 23:08",
+      "subfolder": "",
+      "convention_ok": false,
+      "author_hint": null,
+      "part": "wechat-doc-mapper",
+      "version": null,
+      "read_error": "",
+      "owner": "（未按规范）wechat-doc-mapper"
+    },
+    {
+      "rel": "苗文馨_C4_AI日志.md",
+      "name": "苗文馨_C4_AI日志.md",
+      "ext": ".md",
+      "size_kb": 5.8,
+      "modified": "2026-10-03 23:08",
+      "subfolder": "",
+      "convention_ok": true,
+      "author_hint": "苗文馨",
+      "part": "AI日志",
+      "version": null,
+      "read_error": "",
+      "owner": "苗文馨"
+    },
+    {
+      "rel": "苗文馨_C4_deliverable-checker.skill",
+      "name": "苗文馨_C4_deliverable-checker.skill",
+      "ext": ".skill",
+      "size_kb": 10.87,
+      "modified": "2026-10-03 23:08",
+      "subfolder": "",
+      "convention_ok": true,
+      "author_hint": "苗文馨",
+      "part": "deliverable-checker",
+      "version": null,
+      "read_error": "",
+      "owner": "苗文馨"
+    },
+    {
+      "rel": "苗文馨_C4_deliverable-checker_rubric-guide.md",
+      "name": "苗文馨_C4_deliverable-checker_rubric-guide.md",
+      "ext": ".md",
+      "size_kb": 2.08,
+      "modified": "2026-10-03 23:08",
+      "subfolder": "",
+      "convention_ok": true,
+      "author_hint": "苗文馨",
+      "part": "deliverable-checker_rubric-guide",
+      "version": null,
+      "read_error": "",
+      "owner": "苗文馨"
+    },
+    {
+      "rel": "苗文馨_C4_deliverable-checker_SKILL.md",
+      "name": "苗文馨_C4_deliverable-checker_SKILL.md",
+      "ext": ".md",
+      "size_kb": 7.15,
+      "modified": "2026-10-03 23:08",
+      "subfolder": "",
+      "convention_ok": true,
+      "author_hint": "苗文馨",
+      "part": "deliverable-checker_SKILL",
+      "version": null,
+      "read_error": "",
+      "owner": "苗文馨"
+    },
+    {
+      "rel": "苗文馨_C4_demo截图1_缺漏检出.png",
+      "name": "苗文馨_C4_demo截图1_缺漏检出.png",
+      "ext": ".png",
+      "size_kb": 62.48,
+      "modified": "2026-10-03 23:08",
+      "subfolder": "",
+      "convention_ok": true,
+      "author_hint": "苗文馨",
+      "part": "demo截图1_缺漏检出",
+      "version": null,
+      "read_error": "",
+      "owner": "苗文馨"
+    },
+    {
+      "rel": "苗文馨_C4_demo截图2_全绿通过.png",
+      "name": "苗文馨_C4_demo截图2_全绿通过.png",
+      "ext": ".png",
+      "size_kb": 60.64,
+      "modified": "2026-10-03 23:08",
+      "subfolder": "",
+      "convention_ok": true,
+      "author_hint": "苗文馨",
+      "part": "demo截图2_全绿通过",
+      "version": null,
+      "read_error": "",
+      "owner": "苗文馨"
+    },
+    {
+      "rel": "苗文馨_C4_skill说明.md",
+      "name": "苗文馨_C4_skill说明.md",
+      "ext": ".md",
+      "size_kb": 4.32,
+      "modified": "2026-10-03 23:08",
+      "subfolder": "",
+      "convention_ok": true,
+      "author_hint": "苗文馨",
+      "part": "skill说明",
+      "version": null,
+      "read_error": "",
+      "owner": "苗文馨"
+    },
+    {
+      "rel": "苗文馨_C4_提交前自查报告.md",
+      "name": "苗文馨_C4_提交前自查报告.md",
+      "ext": ".md",
+      "size_kb": 1.92,
+      "modified": "2026-10-03 23:08",
+      "subfolder": "",
+      "convention_ok": true,
+      "author_hint": "苗文馨",
+      "part": "提交前自查报告",
+      "version": null,
+      "read_error": "",
+      "owner": "苗文馨"
+    },
+    {
+      "rel": "苗文馨_C4_教学说明.md",
+      "name": "苗文馨_C4_教学说明.md",
+      "ext": ".md",
+      "size_kb": 3.69,
+      "modified": "2026-10-03 23:08",
+      "subfolder": "",
+      "convention_ok": true,
+      "author_hint": "苗文馨",
+      "part": "教学说明",
+      "version": null,
+      "read_error": "",
+      "owner": "苗文馨"
+    }
+  ]
+}
